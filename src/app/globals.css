@@ -2,26 +2,155 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.splashPage {
+  background-image: url(./SplashPageImage.png);
+  background-position: left top;
+
+  background-size: 100%;
+  height: 100vh;
+  text-align: center;
+  position: fixed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+#overview {
+  position: relative;
+  top: 100vh;
+  background-color: #fff;
+}
+
+.title{
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.title1,
+.title1Start {
+  color: white;
+  border-bottom: solid white 1px;
+  margin-bottom: 5%;
+  line-height: 90%;
+}
+
+.title2,
+.title2End {
+  border-bottom: solid black 1px;
+  margin-bottom: 5%;
+  line-height: 90%;
+}
+
+.title1,
+.title2,
+.title1Start,
+.title2End {
+  font-size: 7.07vw;
+  font-family: 'Arimo', sans-serif;
+  margin-top: -1.%;
+}
+
+.title2End {
+  padding-right: 21%;
+}
+
+.splashPageMenu {
+  border-bottom: solid black 1px;
+  margin-bottom: 5%;
+  line-height: 90%;
+  
+}
+
+.splashPageMenuBar {
+  width: 35px;
+  height: 2%;
+  background-color: black;
+  margin: 6px 0;
+  margin-right: 12%;
+  border-bottom: solid black 1px;
+}
+
+.title span {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-delay: calc(0.07s * var(--i));
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.subtitle {
+  color: white;
+  margin-top: 30%;
+  text-align: start;
+  margin-left: 12%;
+  font-size: 3vw;
+  font-family: 'Arimo', sans-serif;
+}
+
+.profilePic {
+  background-image: url("./IMG_1285.PNG");
+  background-size: 60px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-position: -10px center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.stickyBar {
+  background-color: black;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.profilePicName {
+  color: white;
+  font-family: 'Arimo', sans-serif;
+  font-size: 3vw;
+  padding-left: 2%;
+}
+
+.menuBar{
+margin-top: 1%;
+}
+
+.stickyBarMenuPage {
+  width: 35px;
+  height: 2%;
+  background-color: white;
+  margin: 6px 0;
+  margin-right: 12%;
+  border-bottom: solid white 1px;
+}
+
+.active{
+  height: 4rem;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  transition: 0.3s linear;
+  display: flex;
+  justify-content:stretch;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  z-index: 40;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08);
+  /* padding: 0 7%; */
+}
+.hidden{
+  height: 4rem;
+  width: 100%;
+  z-index: 40;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08);
+  position: fixed;
+  top: -80px;
+  transition: 0.3s linear;
+
 }

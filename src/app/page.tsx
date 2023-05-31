@@ -1,113 +1,90 @@
-import Image from 'next/image'
+"use client"
 
-export default function Home() {
+import React, { useState, useEffect } from 'react'
+
+const HomePage = () => {
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true)
+
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY
+
+    if (currentScrollPos > prevScrollPos) {
+      setVisible(false)
+    } else {
+      setVisible(true)
+    }
+
+    setPrevScrollPos(currentScrollPos)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  })
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div className={`bg-slate-700 h-14 sticky ${visible ? 'top-0' : ''} `}>
+        Some Company Name
+      </div>
+      <div className="splashPage w-full h-screen">
+        <div className='homePage'>
+          <div className="flex flex-row title">
+            <span className="title1Start R" style={{ '--i': '1' } as React.CSSProperties}>R</span>
+            <span className="title1 O" style={{ '--i': '2' } as React.CSSProperties}>O</span>
+            <span className="title1 Y" style={{ '--i': '3' } as React.CSSProperties}>Y</span>
+            <span className="title1" style={{ '--i': '4' } as React.CSSProperties}>&nbsp;</span>
+            <span className="title1" style={{ '--i': '5' } as React.CSSProperties}>H</span>
+            <span className="title1" style={{ '--i': '6' } as React.CSSProperties}>A</span>
+            <span className="title1" style={{ '--i': '7' } as React.CSSProperties}>R</span>
+            <span className="title1" style={{ '--i': '8' } as React.CSSProperties}>G</span>
+            <span className="title2" style={{ '--i': '9' } as React.CSSProperties}>R</span>
+            <span className="title2" style={{ '--i': '10' } as React.CSSProperties}>A</span>
+            <span className="title2" style={{ '--i': '11' } as React.CSSProperties}>V</span>
+            <span className="title2End" style={{ '--i': '12' } as React.CSSProperties}>E</span>
+            <span className="splashPageMenu" style={{ '--i': '13' } as React.CSSProperties}>
+              <div className="splashPageMenuBar"></div>
+              <div className="splashPageMenuBar"></div>
+              <div className="splashPageMenuBar"></div>
+            </span>
+          </div>
         </div>
+        <h2 className="subtitle">PORTFOLIO</h2>
       </div>
+      <main id="overview">
+        <div className="stickyBar grid grid-rows-1 grid-flow-col gap-4">
+          <div className='flex items-center'>
+            <div className='profilePic'></div>
+            <div className='profilePicName justify-self-start ali'>ROY HARGRAVE</div>
+          </div>
+          <div className='menuBar justify-self-end'>
+            <div className="stickyBarMenuPage"></div>
+            <div className="stickyBarMenuPage"></div>
+            <div className="stickyBarMenuPage"></div>
+          </div>
+        </div>
+        <div>
+          <div>ABOUT ME</div>
+          <div className='text-xl'>Condimentum id venenatis a condimentum. Porttitor leo a diam sollicitudin. Amet porttitor eget dolor morbi non arcu risus quis varius. Faucibus turpis in eu mi bibendum neque. Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Fermentum et sollicitudin ac orci phasellus egestas. Pellentesque diam volutpat commodo sed. Enim diam vulputate ut pharetra sit amet. Risus quis varius quam quisque id diam vel quam. Semper quis lectus nulla at volutpat diam ut venenatis tellus. A iaculis at erat pellentesque adipiscing commodo elit at. Lobortis elementum nibh tellus molestie nunc non blandit. Risus nullam eget felis eget nunc lobortis mattis aliquam faucibus. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Sit amet mattis vulputate enim. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Varius duis at consectetur lorem donec massa sapien faucibus et. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Pharetra sit amet aliquam id diam maecenas ultricies mi. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque pulvinar pellentesque habitant morbi tristique senectus et netus. Suspendisse interdum consectetur libero id. Gravida arcu ac tortor dignissim convallis aenean et tortor. Sapien pellentesque habitant morbi tristique senectus et netus et malesuada. Quam pellentesque nec nam aliquam sem. Diam phasellus vestibulum lorem sed risus. Sociis natoque penatibus et magnis dis parturient montes. Adipiscing elit ut aliquam purus sit amet luctus. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Adipiscing enim eu turpis egestas pretium aenean pharetra magna. Ut sem viverra aliquet eget.
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+            Netus et malesuada fames ac turpis egestas sed tempus. Volutpat odio facilisis mauris sit. Sed odio morbi quis commodo odio aenean. Mi proin sed libero enim sed faucibus turpis in eu. Accumsan in nisl nisi scelerisque eu. Eu non diam phasellus vestibulum lorem sed risus ultricies tristique. Elit ut aliquam purus sit amet luctus venenatis. Nunc id cursus metus aliquam eleifend mi. Tempor commodo ullamcorper a lacus vestibulum sed arcu non. Turpis massa sed elementum tempus egestas. Ante metus dictum at tempor commodo ullamcorper a lacus vestibulum.
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            Condimentum id venenatis a condimentum. Porttitor leo a diam sollicitudin. Amet porttitor eget dolor morbi non arcu risus quis varius. Faucibus turpis in eu mi bibendum neque. Non curabitur gravida arcu ac tortor dignissim convallis aenean et. Fermentum et sollicitudin ac orci phasellus egestas. Pellentesque diam volutpat commodo sed. Enim diam vulputate ut pharetra sit amet. Risus quis varius quam quisque id diam vel quam. Semper quis lectus nulla at volutpat diam ut venenatis tellus. A iaculis at erat pellentesque adipiscing commodo elit at. Lobortis elementum nibh tellus molestie nunc non blandit. Risus nullam eget felis eget nunc lobortis mattis aliquam faucibus. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Sit amet mattis vulputate enim. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Varius duis at consectetur lorem donec massa sapien faucibus et. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Pharetra sit amet aliquam id diam maecenas ultricies mi. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque.
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+            Mattis rhoncus urna neque viverra justo nec ultrices dui. Egestas dui id ornare arcu odio. Consequat interdum varius sit amet mattis vulputate enim. Vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra. Elementum pulvinar etiam non quam lacus suspendisse faucibus. Pharetra pharetra massa massa ultricies mi quis hendrerit. Rhoncus dolor purus non enim praesent elementum. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Ac feugiat sed lectus vestibulum mattis ullamcorper velit. Vel quam elementum pulvinar etiam non quam lacus suspendisse. Nulla posuere sollicitudin aliquam ultrices sagittis.
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+            Sagittis vitae et leo duis ut diam quam. Facilisi etiam dignissim diam quis enim lobortis scelerisque. Posuere ac ut consequat semper viverra nam libero. Proin sed libero enim sed. Dui faucibus in ornare quam viverra orci sagittis eu. Metus vulputate eu scelerisque felis. Dignissim suspendisse in est ante in nibh mauris cursus. Senectus et netus et malesuada. Habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat. Feugiat nisl pretium fusce id velit ut tortor. Fames ac turpis egestas integer eget aliquet nibh praesent. Enim tortor at auctor urna. Turpis tincidunt id aliquet risus. Et malesuada fames ac turpis egestas integer eget aliquet. Duis ut diam quam nulla porttitor massa id neque. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida. Vehicula ipsum a arcu cursus vitae congue. Sed felis eget velit aliquet. Nibh mauris cursus mattis molestie a iaculis at.</div>
+        </div>
+      </main>
+    </div>
+  );
 }
+
+export default HomePage;
+
+
+
+

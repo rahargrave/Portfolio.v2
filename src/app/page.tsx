@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react'
+import Image from "next/image"
 
 const HomePage = () => {
   const [show, setShow] = useState(true);
@@ -82,18 +83,25 @@ const HomePage = () => {
           <div className='aboutMeContainer'>
             <div className='aboutMe'>PORTFOLIO</div>
           </div>
-          <div className='portfolioContainer grid grid-rows-3 grid-cols-3'>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div>REAL PEOPLE TRAVEL</div>
-            <div>LOREM IDLE</div>
-            <div>PROJECT 3</div>
-            <div>A travel application using Google's API</div>
-            <div>An rpg idle game with a custom database</div>
-            <div>TBA</div>
+          <div className='portfolioContainer flex flex-wrap'>
+            <div className='portfolioImg w-1/3 flex justify-center'>
+              <Image src="/test2.png" width={350} height={250} alt='yo' />
+            </div>
+            <div className='portfolioImg w-1/3 flex justify-center'>
+              <Image src="/test2.png" width={350} height={250} alt='yo' />
+            </div>
+            <div className='portfolioImg w-1/3 flex justify-center'>
+              <Image src="/test2.png" width={350} height={250} alt='yo' />
+            </div>
+            <div className='portfolioTitle w-1/3'>REAL PEOPLE TRAVEL</div>
+            <div className='portfolioTitle w-1/3'>LOREM IDLE</div>
+            <div className='portfolioTitle w-1/3'>PROJECT 3</div>
+            <div className='portfolioSubtitle w-1/3'>A travel application using Google's API</div>
+            <div className='portfolioSubtitle w-1/3'>An rpg idle game with a custom database</div>
+            <div className='portfolioSubtitle w-1/3'>TBA</div>
           </div>
         </div>
+        <div className='hide'>1</div>
       </main>
     </div>
   );

@@ -102,6 +102,9 @@ const HomePage = () => {
           </div>
         </div>
         <div className='hide'>1</div>
+        <div>
+          
+        </div>
       </main>
     </div>
   );

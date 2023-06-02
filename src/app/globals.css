@@ -211,3 +211,28 @@
   color: white;
   margin:10px;
 }
+
+.footer {
+  background-color: black;
+  color: white;
+  font-family: 'Arimo', sans-serif;
+  font-size: 14px;
+  padding-left: 12%;
+}
+
+.subFooter1 {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.subFooter2 {
+  padding-bottom: 40px;
+}
+
+.instagramlogo {
+  transform: scale(1.25);
+}
+
+.linkedinlogo {
+  transform: scale(1.15);
+}

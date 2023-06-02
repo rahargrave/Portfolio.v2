@@ -102,8 +102,19 @@ const HomePage = () => {
           </div>
         </div>
         <div className='hide'>1</div>
-        <div>
-          
+        <div className='footer grid grid-cols-2 gap-4 w-full'>
+          <div className='subFooter1'>
+            <div>ROY HARGRAVE</div>
+            <div>EMAIL - ROYHARGRAVE13@GMAIL.COM</div>
+            <div>GITHUB - RAHARGRAVE</div>
+            <div>479-657-8541</div>
+          </div>
+          <div className='subFooter2 flex flex-row items-center'>
+            <a className='githublogo p-1' href="https://github.com/rahargrave"><Image src="/githublogo.png" width={50} height={50} alt='yo' /></a>
+            <a className='instagramlogo p-1' href="https://instagram.com/rahargrave"><Image src="/instagramlogo.png" width={50} height={50} alt='yo' /></a>
+            <a className='linkedinlogo p-1' href="https://www.linkedin.com/in/roy-hargrave-70170a83"><Image src="/linkedinlogo2.png" width={50} height={50} alt='yo' /></a>
+            <a className='twitterlogo p-1' href="https://twitter.com/riverbend13?lang=en"><Image src="/twitterlogo.png" width={50} height={50} alt='yo' /></a>
+          </div>
         </div>
       </main>
     </div>
